@@ -29,7 +29,7 @@ def send_messages(message):
 while True:
     # Bucle principal para enviar mensajes cada una hora.
     try:
-        send_message("Time to hydrate and move for a bit!!")
+        send_messages("Time to hydrate and move for a bit!!")
         time.sleep(3600)
         # 1 hora = 3600 segs. Espera esa cantidad de tiempo para volver a enviar otro mensaje.
     except KeyboardInterrupt:
