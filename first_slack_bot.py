@@ -20,14 +20,14 @@ channel_id_2 = os.getenv('CHANNEL_ID_2')
 mention_users = os.getenv('MENTION_USERS').split(' ')
 time_interval = int(os.getenv('TIME_INTERVAL'))
 
-# Obtener los usuarios para cada día de la semana
+# Obtener los usuarios para cada dia de la semana
 monday_users = os.getenv('MONDAY_USERS').split(' ')
 tuesday_users = os.getenv('TUESDAY_USERS').split(' ')
 wednesday_users = os.getenv('WEDNESDAY_USERS').split(' ')
 thursday_users = os.getenv('THURSDAY_USERS').split(' ')
 friday_users = os.getenv('FRIDAY_USERS').split(' ')
 
-# Diccionario para mapear días de la semana a usuarios
+# Diccionario para mapear dias de la semana a usuarios
 users_schedule = {
     0: monday_users,    # Lunes
     1: tuesday_users,   # Martes
@@ -67,7 +67,7 @@ schedule.every().friday.at("16:00").do(job)
 
 def main_loop():
     while True:
-        schedule.run_pending() # Ejecuta cualquier tarea programada que esté pendiente
+        schedule.run_pending() # Ejecuta cualquier tarea programada que este pendiente
         try:
             # Envia un mensaje de recordatorio a otro canales 
             send_slack_message(channel_id_1, f"Time to hydrate and move for a bit!! {' '.join(mention_users)}")
