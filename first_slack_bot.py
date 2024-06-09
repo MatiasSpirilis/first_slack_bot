@@ -99,7 +99,7 @@ def hydrate():
     argentina_tz = timezone('America/Argentina/Buenos_Aires')
     now = datetime.now(argentina_tz)
     print(f"Current time: {now}")
-    if now.weekday() < 7 and 9 <= now.hour < 23:  # Lunes es 0 y domingo es 6
+    if now.weekday() < 5 and 9 <= now.hour < 23:  # Lunes es 0 y domingo es 6
         messages = [
             "Time to hydrate and move for a bit!!",
             "Don't forget to drink water and stretch!",
@@ -133,7 +133,7 @@ def inbox():
 
 
 # Programo la tarea para que se ejecute cada 1 hora
-# schedule.every().hour.do(hydrate)
+schedule.every().hour.do(hydrate)
 # Programo la tarea para que se ejecute cada 1 minuto (testeo)
 # schedule.every(1).minutes.do(hydrate)
 
