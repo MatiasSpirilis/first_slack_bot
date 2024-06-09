@@ -126,7 +126,7 @@ def inbox():
     # Zona horaria de Arg
     argentina_tz = timezone('America/Argentina/Buenos_Aires')
     now = datetime.now(argentina_tz)
-    if now.weekday() < 7:  # Lunes es 0 y domingo es 6
+    if now.weekday() < 5:  # Lunes es 0 y domingo es 6
         users_to_mention = users_schedule.get(now.weekday(), ["", ""])
         message = f"{users_to_mention[0]} {users_to_mention[1]} Inbox shift!"
         send_slack_message(channel_id_2, message)
